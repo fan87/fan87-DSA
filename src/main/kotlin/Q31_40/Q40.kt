@@ -1,5 +1,8 @@
 package Q31_40
 
+import __Serializer__
+import testing.LeetTest
+
 class Q40 {
 
     // TODO: Practice
@@ -36,6 +39,9 @@ class Q40 {
 }
 
 fun main() {
-    println(Q40.Solution().combinationSum2(intArrayOf(10,1,2,7,6,1,5), 8))
-    println(Q40.Solution().combinationSum2(intArrayOf(1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1), 30))
+    // Without LeetTest, you have to manually write intArrayOf and stuff
+    println(Q40.Solution().combinationSum2(intArrayOf(10,1,2,7,6,1,5), 8) == listOf(listOf(1,1,6), listOf(1,2,5), listOf(1,7), listOf(2,6)))
+
+    // With LeetTest, you can directly copy them from LeetCode's website
+    LeetTest.assertReturn(Q40.Solution::combinationSum2, __Serializer__::serialize, "[[1,1,6],[1,2,5],[1,7],[2,6]]", "[10,1,2,7,6,1,5]", "8")
 }
